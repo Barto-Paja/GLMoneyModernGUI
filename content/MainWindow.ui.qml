@@ -13,8 +13,19 @@ Item {
     width: 1920
     height: 1080
 
-    NavBarForm {
-        width: parent.width * 0.2
-        height: parent.height
+    Row {
+
+        width: 1920
+        height: 1080
+
+        NavBarForm {
+            width: parent.width * 0.2
+            height: parent.height
+        }
+
+        IncomesAndExpensesForm {
+            width: parent.width * 0.8
+            height: parent.height
+        }
     }
 }

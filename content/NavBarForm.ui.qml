@@ -58,7 +58,6 @@ Item {
             Button {
                 width: root.width * 0.8
                 text: qsTr("Dodaj nowy wpis")
-                anchors.horizontalCenter: parent.horizontalCenter
             }
 
             Button {
