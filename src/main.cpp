@@ -25,11 +25,12 @@ int main(int argc, char *argv[])
 
     engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
     engine.addImportPath(":/");
+    engine.addImportPath(":/imports");
 
     engine.load(url);
 
     if (engine.rootObjects().isEmpty()) {
-        return -1;
+        return EXIT_FAILURE;
     }
 
     return app.exec();

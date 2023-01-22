@@ -4,8 +4,9 @@ project(GLMoneyModernGUIApp LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
+set(QML_IMPORT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/content)
 
-find_package(Qt6 COMPONENTS Gui Qml Quick)
+find_package(Qt6 COMPONENTS Gui Qml Quick QuickControls2)
 qt_add_executable(GLMoneyModernGUIApp src/main.cpp)
 
 qt_add_resources(GLMoneyModernGUIApp "configuration"

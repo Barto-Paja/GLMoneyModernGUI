@@ -70,45 +70,13 @@ Item {
                 text: qsTr("Importuj transakcje z CSV")
             }
 
+            Button {
+                id: button_dictionary
+                width: root.width * 0.8
+                text: qsTr("Słowniki")
+            }
+
             // Narzędzia do zarządzania
-            Rectangle {
-                id: tools_header
-                width: root.width
-                height: 50
-                color: "#00ffffff"
-
-                Text {
-                    id: tools_text
-                    text: qsTr("Notawanie")
-                    font.pixelSize: 24
-                }
-            }
-
-            Button {
-                width: root.width * 0.8
-                text: qsTr("Dodaj Kategorię")
-            }
-
-            Button {
-                width: root.width * 0.8
-                text: qsTr("Dodaj Podkategorię")
-            }
-
-            Button {
-                width: root.width * 0.8
-                text: qsTr("Dodaj Konto")
-            }
-
-            Button {
-                width: root.width * 0.8
-                text: qsTr("Dodaj Kontrahenta")
-            }
-
-            Button {
-                width: root.width * 0.8
-                text: qsTr("Dodaj Centrum Kosztów")
-            }
-
             Rectangle {
                 id: budget_header
                 width: root.width

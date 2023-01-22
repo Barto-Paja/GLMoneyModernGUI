@@ -12,7 +12,7 @@ Window {
     visible: true
     title: "GLMoneyModernGUI"
 
-    MainWindow {
+    CoreWindowForm {
         id: mainScreen
         width: parent.width
         height: parent.height

@@ -15,18 +15,19 @@ Item {
     width: 1920
     height: 1080
 
+    property alias main_stackCurrentIndex: main_stack.currentIndex
+    property alias navbar: navbar
+    property alias mainstack: main_stack
+
     Row {
 
         width: 1920
         height: 1080
 
         NavBarForm {
+            id: navbar
             width: parent.width * 0.2
             height: parent.height
-
-            buttonAddCategory.onClicked: {
-                main_stack.currentIndex = 2
-            }
         }
 
         StackLayout {
@@ -35,18 +36,21 @@ Item {
             width: parent.width * 0.8
             height: parent.height
 
-            currentIndex: 0
+            currentIndex: 2
 
             StartPageForm {
-                anchors.fill: parent
+                width: parent.width
+                height: parent.height
             }
 
             IncomesAndExpensesForm {
-                anchors.fill: parent
+                width: parent.width
+                height: parent.height
             }
 
             DictionariesForm {
-                anchors.fill: parent
+                width: parent.width
+                height: parent.height
             }
         }
     }
