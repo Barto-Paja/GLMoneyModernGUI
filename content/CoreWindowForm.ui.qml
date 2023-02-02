@@ -19,12 +19,15 @@ Item {
     property alias navbar: navbar
     property alias mainstack: main_stack
 
+    property alias start_page: start_page
+    property alias iae_page: iae_page
+
     Row {
 
         width: 1920
         height: 1080
 
-        NavBarForm {
+        NavBar {
             id: navbar
             width: parent.width * 0.2
             height: parent.height
@@ -36,19 +39,22 @@ Item {
             width: parent.width * 0.8
             height: parent.height
 
-            currentIndex: 2
+            currentIndex: 1
 
-            StartPageForm {
+            StartPage {
+                id: start_page
                 width: parent.width
                 height: parent.height
             }
 
-            IncomesAndExpensesForm {
+            IncomesAndExpenses {
+                id: iae_page
                 width: parent.width
                 height: parent.height
             }
 
-            DictionariesForm {
+            Dictionaries {
+                id: df
                 width: parent.width
                 height: parent.height
             }

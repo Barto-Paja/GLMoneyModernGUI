@@ -23,6 +23,9 @@ Item {
     width: 1920
     height: 1080
 
+    property alias comboBoxCategories: cb_category
+    property alias comboBoxSubcategories: cb_subcategories
+
     Rectangle {
         id: root_background
         width: parent.width
@@ -101,6 +104,9 @@ Item {
 
                             ComboBox {
                                 id: cb_accounts
+                                textRole: "Name"
+                                valueRole: "ID"
+                                model: DataBaseCursor.accounts
                                 width: parent.width * 0.8 - 10.0
                             }
                         }
@@ -150,6 +156,9 @@ Item {
 
                             ComboBox {
                                 id: cb_payees
+                                textRole: "Name"
+                                valueRole: "ID"
+                                model: DataBaseCursor.payees
                                 width: parent.width * 0.7 - 10.0
                             }
                         }
@@ -240,6 +249,9 @@ Item {
 
                             ComboBox {
                                 id: cb_members
+                                textRole: "Name"
+                                valueRole: "ID"
+                                model: DataBaseCursor.members
                                 width: parent.width
                             }
                         }
@@ -257,6 +269,10 @@ Item {
 
                             ComboBox {
                                 id: cb_category
+                                textRole: "Name"
+                                valueRole: "ID"
+                                model: DataBaseCursor.categories
+
                                 width: parent.width
                             }
                         }
@@ -274,6 +290,9 @@ Item {
 
                             ComboBox {
                                 id: cb_subcategories
+                                textRole: "Name"
+                                valueRole: "ID"
+
                                 width: parent.width - 20.0
                             }
                         }

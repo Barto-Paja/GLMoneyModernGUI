@@ -3,9 +3,12 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 #include "app_environment.h"
 #include "import_qml_plugins.h"
+
+#include "databasecursor.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +16,12 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    DataBaseCursor cursor(&app);
+    //qmlRegisterType<DataBase::DataBaseCursor>("GLModule.DataBase", 1, 0, "DataBaseCursor");
+
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty("DataBaseCursor", &cursor);
+
     const QUrl url(u"qrc:Main/main.qml"_qs);
     QObject::connect(
                 &engine, &QQmlApplicationEngine::objectCreated, &app,

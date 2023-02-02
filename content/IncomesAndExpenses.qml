@@ -1,5 +1,11 @@
 import QtQuick 2.15
+import QtQuick.Controls 2.15
+import "Utils"
 
-IncomesAndExpencesForm {
-    button.onClicked: console.log("Button Pressed")
+IncomesAndExpensesForm {
+
+    comboBoxCategories.onActivated: {
+        DataBaseCursor.loadSelectedCategory(comboBoxCategories.currentValue);
+        comboBoxSubcategories.model = DataBaseCursor.selectedSubcategories;
+    }
 }
