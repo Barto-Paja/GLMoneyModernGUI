@@ -39,6 +39,23 @@ void DataBaseCursor::loadSelectedCategory(const int &ID)
     }
 }
 
+bool DataBaseCursor::addNewTransaction(const QDate &date, const int &payee_id, const double &amount, const int &category_id, const int &member_id,
+                                       const int &account_id, const QString &note, const int &multiplicand, const QString &gui_note)
+{
+    return AddNewTransaction(NewTransaction
+                             {
+                                 date,
+                                 payee_id,
+                                 amount,
+                                 category_id,
+                                 member_id,
+                                 account_id,
+                                 note,
+                                 multiplicand,
+                                 gui_note
+                             });
+}
+
 const QVector<SubCategory *> &DataBaseCursor::selectedSubcategories() const
 {
     return m_selectedSubcategories;
@@ -245,5 +262,38 @@ bool DataBaseCursor::LoadCategories()
     qDebug() << query.lastError().text() << "\n" << query.lastQuery();
     error:
     return false;
+}
+
+bool DataBaseCursor::AddNewTransaction(const NewTransaction &transaction)
+{
+    QSqlQuery query {m_db};
+
+    m_db.transaction();
+
+    query.prepare("INSERT INTO [Transaction] "
+                  "([when], payee_id, amount, category_id, member_id, note, acount_id, multiplicand ) "
+                  "VALUES "
+                  "( :when, :payee_id, :amount, :categoryid, :memberid, :note, :accountid, :multiplicand )");
+
+    query.bindValue(":when",transaction.date.toString("yyyy-MM-dd"));
+    query.bindValue(":payee_id",transaction.payeeID);
+    query.bindValue(":amount", transaction.amount);
+    query.bindValue(":categoryid",transaction.categoryID);
+    query.bindValue(":memberid",transaction.memberID);
+    query.bindValue(":note",transaction.note);
+    query.bindValue(":accountid",transaction.accountID);
+    query.bindValue(":multiplicand",transaction.multiplicand);
+
+    if(query.exec())
+    {
+        m_db.commit();
+        return true;
+    }
+    else
+    {
+        error = query.lastError().text();
+        m_db.rollback();
+        return false;
+    }
 }
 

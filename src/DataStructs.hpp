@@ -165,4 +165,19 @@ struct Transaction {
     ~Transaction() = default;
 };
 
+struct NewTransaction {
+    QDate date;
+    int payeeID {0};
+    double amount {0.00};
+    int categoryID {0};
+    int memberID {0};
+    int accountID{0};
+    QString note;
+    int multiplicand {-1};
+    QString guiNote;
+
+    NewTransaction() = default;
+    ~NewTransaction() = default;
+};
+
 #endif // DATASTRUCTS_H

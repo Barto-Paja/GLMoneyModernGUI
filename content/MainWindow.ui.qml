@@ -20,13 +20,9 @@ Item {
         width: 1920
         height: 1080
 
-        NavBarForm {
+        NavBar {
             width: parent.width * 0.2
             height: parent.height
-
-            buttonAddCategory.onClicked: {
-                main_stack.currentIndex = 2
-            }
         }
 
         StackLayout {
@@ -37,11 +33,11 @@ Item {
 
             currentIndex: 0
 
-            StartPageForm {
+            StartPage {
                 anchors.fill: parent
             }
 
-            IncomesAndExpensesForm {
+            IncomesAndExpenses {
                 anchors.fill: parent
             }
 

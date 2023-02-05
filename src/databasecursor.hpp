@@ -46,6 +46,7 @@ public:
     const QMap<int, QVector<SubCategory *> > &subCategories() const;
 
     Q_INVOKABLE void loadSelectedCategory(const int & ID);
+    Q_INVOKABLE bool addNewTransaction(const QDate & date, const int & payee_id, const double & amount, const int & category_id, const int & member_id, const int & account_id, const QString & note, const int & multiplicand, const QString & gui_note);
 
     const QVector<SubCategory *> &selectedSubcategories() const;
 
@@ -64,5 +65,7 @@ private:
     Q_PROPERTY(QVector<Category*> categories READ categories CONSTANT)
     Q_PROPERTY(QMap<int, QVector<SubCategory*> > subCategories READ subCategories CONSTANT)
     Q_PROPERTY(QVector<SubCategory *> selectedSubcategories READ selectedSubcategories CONSTANT)
+
+    bool AddNewTransaction(const NewTransaction & transaction);
 };
 #endif // DATABASECURSOR_HPP
