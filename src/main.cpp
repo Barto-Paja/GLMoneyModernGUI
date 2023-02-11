@@ -4,6 +4,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QLocale>
 
 #include "app_environment.h"
 #include "import_qml_plugins.h"
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 
     DataBaseCursor cursor(&app);
     //qmlRegisterType<DataBase::DataBaseCursor>("GLModule.DataBase", 1, 0, "DataBaseCursor");
-
+    QLocale::setDefault(QLocale::c());
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("DataBaseCursor", &cursor);
 

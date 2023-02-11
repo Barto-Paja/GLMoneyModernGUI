@@ -39,7 +39,7 @@ Item {
             width: parent.width * 0.8
             height: parent.height
 
-            currentIndex: 1
+            currentIndex: 0
 
             StartPage {
                 id: start_page

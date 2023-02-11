@@ -103,8 +103,8 @@ Project {
     }
 
     multilanguageSupport: true
-    supportedLanguages: ["en"]
-    primaryLanguage: "en"
+    supportedLanguages: ["pl"]
+    primaryLanguage: "pl"
 
 
     mainUiFile: "content/NavigationBar.ui.qml"

@@ -15,6 +15,11 @@ Rectangle {
     width: 1920 * 0.3
     height: 1080 * 0.5
 
+    property alias comboboxPayees: cb_payees
+    property alias switchIncome: income_switch
+    property alias textFieldAmount: tf_amount
+    property alias textAreaNotes: ta_notes
+
     Column {
         id: second_step_column
         anchors.fill: parent
@@ -82,6 +87,7 @@ Rectangle {
                 id: tf_amount
                 width: parent.width * 0.3
                 font.pixelSize: 30
+                inputMethodHints: Qt.ImhFormattedNumbersOnly //Qt.ImhDigitsOnly
                 placeholderText: qsTr("0,00")
             }
         }

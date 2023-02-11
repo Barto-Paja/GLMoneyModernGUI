@@ -14,4 +14,11 @@ qt6_add_qml_module(content
         MemberForm.ui.qml
         NewCategory.qml
         NewCategoryForm.ui.qml
+        NewCategoryForm.ui.qml
+        IaEFirstStep.qml
+        IaEFirstStepForm.ui.qml
+        IaESecondStep.qml
+        IaESecondStepForm.ui.qml
+        IaEThirdStep.qml
+        IaEThirdStep.ui.qml
 )

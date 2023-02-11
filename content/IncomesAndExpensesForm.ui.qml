@@ -27,6 +27,11 @@ Item {
     //    property alias comboBoxCategories: cb_category
     //    property alias comboBoxSubcategories: cb_subcategories
     //    property alias buttonCommit: button_commit
+    property alias firstStep: first_step
+    property alias secondStep: second_step
+    property alias thirdStep: third_step
+    property alias messageBox: msg
+
     Rectangle {
         id: root_background
         width: parent.width
@@ -68,30 +73,38 @@ Item {
                 spacing: 3
 
                 IaEFirstStep {
-                    id: first_step_background
+                    id: first_step
                     width: root.width * 0.3
                     height: root.height * 0.5
                     border.width: 3
                 }
 
                 IaESecondStep {
-                    id: second_step_background
+                    id: second_step
                     width: root.width * 0.3
                     height: root.height * 0.5
                     border.width: 3
                 }
 
                 IaEThirdStep {
-                    id: third_step_background
+                    id: third_step
                     width: root.width * 0.3
                     height: root.height * 0.5
                     border.width: 3
                 }
             }
 
+            MessageBox {
+                id: msg
+                visible: false
+                anchors.horizontalCenter: parent.horizontalCenter
+                message: "Jakiś tekst"
+                width: parent.width*0.5
+            }
+
             Text {
                 id: help_placeholder
-                text: qsTr("Najedź kursorem na dany element, aby zobaczyć podpowiedź.")
+                text: qsTr("")
                 font.pixelSize: 32
                 wrapMode: Text.WordWrap
                 minimumPixelSize: 30

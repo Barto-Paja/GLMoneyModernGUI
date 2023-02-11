@@ -14,6 +14,12 @@ Item {
     width: 1024
     height: 768
 
+    property alias buttonIaE:iae
+    property alias buttonHelp:buttonHelp
+    property alias buttonQuit:buttonQuit
+    property alias buttonDictionaries: button_dictionary
+
+
     Rectangle {
 
         width: root.width
@@ -56,6 +62,7 @@ Item {
             }
 
             Button {
+                id: iae
                 width: root.width * 0.8
                 text: qsTr("Dodaj nowy wpis")
             }
@@ -114,16 +121,19 @@ Item {
             }
 
             Button {
+                id: buttonConfig
                 width: root.width * 0.8
                 text: qsTr("Konfiguracja")
             }
 
             Button {
+                id: buttonHelp
                 width: root.width * 0.8
                 text: qsTr("Pomoc")
             }
 
             Button {
+                id: buttonQuit
                 width: root.width * 0.8
                 text: qsTr("Zakończ")
             }

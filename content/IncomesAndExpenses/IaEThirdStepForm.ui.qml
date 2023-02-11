@@ -14,6 +14,12 @@ Rectangle {
     id: third_step_background
     width: 1920 * 0.3
     height: 1080 * 0.5
+    border.color: "#ffffff"
+
+    property alias buttonCommit: button_commit
+    property alias comboboxSubcategories: cb_subcategories
+    property alias comboboxCategories: cb_category
+    property alias comboboxMembers: cb_members
 
     Column {
         id: third_step_column
@@ -72,6 +78,7 @@ Rectangle {
                 model: DataBaseCursor.categories
 
                 width: parent.width
+
             }
         }
 

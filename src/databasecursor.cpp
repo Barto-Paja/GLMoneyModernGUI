@@ -291,7 +291,16 @@ bool DataBaseCursor::AddNewTransaction(const NewTransaction &transaction)
     }
     else
     {
-        error = query.lastError().text();
+
+        qDebug() << transaction.date;
+        qDebug() << transaction.payeeID;
+        qDebug() << transaction.amount;
+        qDebug() << transaction.categoryID;
+        qDebug() << transaction.memberID;
+        qDebug() << transaction.accountID;
+        qDebug() << transaction.multiplicand;
+
+        qDebug() << query.lastError().text();
         m_db.rollback();
         return false;
     }

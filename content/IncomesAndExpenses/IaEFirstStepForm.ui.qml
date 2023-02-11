@@ -15,6 +15,10 @@ Rectangle {
     id: first_step_background
     width: 1920 * 0.3
     height: 1080 * 0.5
+    border.color: "#ffffff"
+
+    property alias comboboxAccounts: cb_accounts
+    property alias datePicker : date_picker
 
     Column {
         id: first_step_column
@@ -56,7 +60,7 @@ Rectangle {
         }
 
         DatePicker {
-            id: date_picker_form
+            id: date_picker
             width: first_step_background.width - 20.0
             height: first_step_background.height * 0.7
         }

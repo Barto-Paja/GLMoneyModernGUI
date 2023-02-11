@@ -17,6 +17,8 @@ qt6_add_qml_module(content
         StartPageForm.ui.qml
         Utils/DatePicker.qml
         Utils/DatePickerForm.ui.qml
+        Utils/MessageBox.qml
+        Utils/MessageBoxForm.ui.qml
         IncomesAndExpenses/Category.qml
         IncomesAndExpenses/CategoryForm.ui.qml
         IncomesAndExpenses/Dictionaries.qml
@@ -25,6 +27,12 @@ qt6_add_qml_module(content
         IncomesAndExpenses/MemberForm.ui.qml
         IncomesAndExpenses/NewCategory.qml
         IncomesAndExpenses/NewCategoryForm.ui.qml
+        IncomesAndExpenses/IaEFirstStep.qml
+        IncomesAndExpenses/IaEFirstStepForm.ui.qml
+        IncomesAndExpenses/IaESecondStep.qml
+        IncomesAndExpenses/IaESecondStepForm.ui.qml
+        IncomesAndExpenses/IaEThirdStep.qml
+        IncomesAndExpenses/IaEThirdStepForm.ui.qml
     RESOURCES
         fonts/fonts.txt
 )
